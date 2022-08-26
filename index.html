@@ -19,6 +19,9 @@
     </header>
     <main>
       <h2 class="h1 text-center">Serviços</h2>
+      <div class="secondary-search-input">
+        <input type="text" class="form-control text-center my-2" placeholder="Busque o serviço">
+      </div>
       <div class="service-categories py-5">
         <div v-for="serviceCategory in serviceCategories" class="service-category">
           <div v-html="serviceCategory.title" class="service-title"></div>
