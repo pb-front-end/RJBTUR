@@ -1,0 +1,50 @@
+* {
+  color: #313638;
+}
+
+.content {
+  min-height: 100vh;
+  height: 100%;
+  background-image: linear-gradient(#F7C040, #66B2FF);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.menu-icon {
+  max-height: 40px;
+}
+
+.search-icon {
+  max-height: 40px;
+}
+
+.service-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.service-category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-title {
+  position: absolute;
+  font-size: 2em;
+}
+
+.service-title * {
+  margin: 0;
+}
+
+.service-category img {
+  width: 90%;
+  border-radius: 10px;
+}
