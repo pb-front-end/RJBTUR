@@ -30,26 +30,26 @@
         font-size: 2em;
     }
 
-    .second {
-        height: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        row-gap: 10px;
-    }
-
     p img{
         width: 20px;
     }
 
-    .third {
-        height: 250px;
+    .second, .third, .fourth {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        row-gap: 20px;
+        
+    }
+
+    .second {
+        height: 200px;
+        row-gap: 10px;
+    }
+
+    .third {
+        height: 250px;
+        row-gap: 10px;
     }
 
     hr.line {
