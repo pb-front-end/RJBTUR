@@ -31,7 +31,7 @@ export default {
       if (!this.logged)
         return this.goTo('/UserLogin');
 
-      this.goTo('/UserView');
+      this.goTo('/User');
     },
     goTo(path) {
       this.$router.push(path);
