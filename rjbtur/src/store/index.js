@@ -13,6 +13,10 @@ const index = {
   actions: {
     setUser({commit}, user) {
       commit('setUser', user);
+    },
+
+    logoff({commit}) {
+      commit('setUser', undefined);
     }
   }
 };
