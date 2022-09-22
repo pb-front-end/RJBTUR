@@ -9,7 +9,7 @@
         v-for="(error, index) in errors" :key="index">{{error}}
       </div>
       <div class="d-flex flex-column gap-4">
-        <input v-model="username" @keydown.enter.prevent="tryLogin" type="text" class="form-control text-center" placeholder="Nome de usuario">
+        <input v-model="email" @keydown.enter.prevent="tryLogin" type="text" class="form-control text-center" placeholder="Email de usuario">
         <input v-model="password" @keydown.enter.prevent="tryLogin" type="password" class="form-control text-center" placeholder="Senha">
         <div class="d-flex gap-2">
           <button class="btn btn-primary w-50" @click="goToCreateUser">Criar conta</button>
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+/* eslint-disable no-useless-escape */
 import HeaderComponent from '../components/HeaderComponent.vue'
 import { mapActions } from 'vuex';
 
@@ -30,7 +31,7 @@ export default {
 
   data() {
     return {
-      username: '',
+      email: '',
       password: '',
       errors: []
     }
@@ -61,8 +62,8 @@ export default {
     validate() {
       let errors = [];
 
-      if (!this.username)
-        errors.push('Nome de usuario não pode ficar vazio.');
+      if (!this.email || !this.emailTest(this.email))
+        errors.push('Email de usuario deve ser valido.');
 
       if (!this.password)
         errors.push('A senha não pode ficar vazia.');
@@ -77,8 +78,13 @@ export default {
       const users = JSON.parse(localStorage.getItem('users'));
 
       return users.find(user => {
-        return (user.username == this.username && user.password == this.password);
+        return (user.email == this.email && user.password == this.password);
       });
+    },
+    emailTest(email) {
+      const re = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
+      return re.test(email);
     }
   }
 }
