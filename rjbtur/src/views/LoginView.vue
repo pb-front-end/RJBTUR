@@ -12,10 +12,10 @@
         <input v-model="email" @keydown.enter.prevent="tryLogin" type="text" class="form-control text-center" placeholder="Email de usuario">
         <input v-model="password" @keydown.enter.prevent="tryLogin" type="password" class="form-control text-center" placeholder="Senha">
         <div class="d-flex gap-2">
-          <button class="btn btn-primary w-50" @click="goToCreateUser">Criar conta</button>
-          <button class="btn btn-primary w-50" @click="tryLogin">Entrar</button>
+          <button type="button" class="btn btn-primary w-50" @click="goToCreateUser">Criar conta</button>
+          <button type="button" class="btn btn-primary w-50" @click="tryLogin">Entrar</button>
         </div>
-        <button class="btn btn-primary w-50" @click="goBack">Voltar</button>
+        <button type="button" class="btn btn-primary w-50" @click="goBack">Voltar</button>
       </div>
     </form>
   </div>
