@@ -75,7 +75,7 @@ export default {
       return true;
     },
     login() {
-      const users = JSON.parse(localStorage.getItem('users'));
+      const users = JSON.parse(localStorage.getItem('users')) || [];
 
       return users.find(user => {
         return (user.email == this.email && user.password == this.password);
