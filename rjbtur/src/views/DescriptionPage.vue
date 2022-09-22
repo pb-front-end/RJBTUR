@@ -2,7 +2,7 @@
   <div class="content">
     <header-component/>
     <main>
-      <h2 class="h1 text-center">Cristo Redentor</h2>
+      <h2 class="h1 text-center">{{ this.selectedOption }}</h2>
       <img src="../assets/images/cristo.jpeg" class="banner">
 
       <div class="info card">
@@ -34,9 +34,13 @@
 
 <script>
 import HeaderComponent from '@/components/HeaderComponent.vue';
+import { mapState } from 'vuex';
 
 export default {
-  components: {HeaderComponent}
+  components: {HeaderComponent},
+  computed: {
+    ...mapState('index', ['selectedOption'])
+  }
 }
 </script>
 
@@ -46,21 +50,6 @@ export default {
   min-height: 100vh;
   height: 100%;
   background-image: linear-gradient(#F7C040, #66B2FF);
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-}
-
-.menu-icon {
-  max-height: 30px;
-}
-
-.search-icon {
-  max-height: 30px;
 }
 
 main {

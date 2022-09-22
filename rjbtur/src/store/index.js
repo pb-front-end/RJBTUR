@@ -1,14 +1,36 @@
 import { createStore } from 'vuex'
 
-export default createStore({
+const index = {
+  namespaced: true,
   state: {
-  },
-  getters: {
+    user: undefined,
+    selectedService: '',
+    selectedOption: '',
   },
   mutations: {
+    setUser(state, user) {
+      state.user = user;
+    },
+    setSelectedService(state, selectedService) {
+      state.selectedService = selectedService;
+    },
+    setSelectedOption(state, selectedOption) {
+      state.selectedOption = selectedOption;
+    }
   },
   actions: {
-  },
-  modules: {
+    setUser({commit}, user) {
+      commit('setUser', user);
+    },
+    setSelectedService({commit}, selectedService) {
+      commit('setSelectedService', selectedService);
+    },
+    setSelectedOption({commit}, selectedOption) {
+      commit('setSelectedOption', selectedOption);
+    }
   }
-})
+};
+
+const modules = { index };
+
+export default createStore({modules})
