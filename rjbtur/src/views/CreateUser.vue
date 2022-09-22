@@ -50,6 +50,7 @@ export default {
     },
     createUser() {
       const user = {
+        id: Date.now(),
         username: this.username,
         email: this.email,
         password: this.password
@@ -105,7 +106,7 @@ export default {
       return !!this.getCurrentUsers().find(userObject => userObject.email === user.email);
     },
     getCurrentUsers() {
-      return JSON.parse(localStorage.getItem('users'));
+      return JSON.parse(localStorage.getItem('users')) || [];
     }
   }
 }
