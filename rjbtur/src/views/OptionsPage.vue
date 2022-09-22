@@ -28,10 +28,10 @@ export default {
   data() {
     return {
       opcoes: [
-        {name: "Cristo Redentor", servico: "Pontos Turísticos", title: '<p style="color: white;">Cristo Redentor</p>', img: require('../assets/images/cristo.jpeg'), imgAlt: 'vista do cristo redentor' },
-        {name: "Pão de Açúcar<", servico: "Pontos Turísticos", title: '<p style="color: white;">Pão de Açúcar</p>', img: require('../assets/images/cristo.jpeg'), imgAlt: 'vista do cristo redentor' },
-        {name: "Arcos da Lapa", servico: "Pontos Turísticos", title: '<p style="color: white;">Arcos da Lapa</p>', img: require('../assets/images/cristo.jpeg'), imgAlt: 'vista do cristo redentor' },
-        {name: "Bondinho", servico: "Pontos Turísticos", title: '<p style="color: white;">Bondinho</p>', img: require('../assets/images/cristo.jpeg'), imgAlt: 'vista do cristo redentor' },
+        {name: "Cristo Redentor", servico: "Pontos Turísticos", title: '<p style="color: white;">Cristo Redentor</p>', img: require('../assets/images/copacabana.jpg'), imgAlt: 'vista do cristo redentor' },
+        {name: "Pão de Açúcar<", servico: "Pontos Turísticos", title: '<p style="color: white;">Pão de Açúcar</p>', img: require('../assets/images/copacabana.jpg'), imgAlt: 'vista do cristo redentor' },
+        {name: "Arcos da Lapa", servico: "Pontos Turísticos", title: '<p style="color: white;">Arcos da Lapa</p>', img: require('../assets/images/copacabana.jpg'), imgAlt: 'vista do cristo redentor' },
+        {name: "Bondinho", servico: "Pontos Turísticos", title: '<p style="color: white;">Bondinho</p>', img: require('../assets/images/copacabana.jpg'), imgAlt: 'vista do cristo redentor' },
 
         {name: "Fasano", servico: "Hospedagens", title: '<p style="color: white;">Fasano</p>', img: require('../assets/images/hospedagem.jpeg'), imgAlt: 'quarto de hotel' },
         {name: "Copacabana Palace", servico: "Hospedagens", title: '<p style="color: white;">Copacabana Palace</p>', img: require('../assets/images/hospedagem.jpeg'), path: "/OptionsPage", imgAlt: 'quarto de hotel' },
@@ -126,6 +126,12 @@ export default {
   .options {
     display: grid;
     grid-template-columns: auto auto;
+  }
+}
+
+@media (min-width: 960px) {
+  .options {
+    margin: 0 15%;
   }
 }
 </style>
