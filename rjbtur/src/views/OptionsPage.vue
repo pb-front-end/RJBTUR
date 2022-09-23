@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <header-component/>
+    <header-component :breadcrumb="`/Serviços/${selectedService}`"/>
     <main>
       <h2 class="h1 text-center">{{ this.selectedService }}</h2>
       <div id="search">

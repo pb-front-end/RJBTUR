@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <header-component/>
+    <header-component breadcrumb="Serviços/"/>
     <h2 class="h1 text-center">Serviços</h2>
     <div class="secondary-search-input">
       <input type="text" class="form-control text-center my-2" placeholder="Busque o serviço">

@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <header-component/>
+    <header-component breadcrumb="Entrar/"/>
 
     <p class="h2 text-center pb-4">Entrar</p>
 

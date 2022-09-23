@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <header-component/>
+    <header-component :breadcrumb="`/Serviços/${selectedService}/${selectedOption}`"/>
     <main>
       <h2 class="h1 text-center">{{ this.selectedOption }}</h2>
       <img src="../assets/images/cristo.jpeg" class="banner">
@@ -39,7 +39,7 @@ import { mapState } from 'vuex';
 export default {
   components: {HeaderComponent},
   computed: {
-    ...mapState('index', ['selectedOption'])
+    ...mapState('index', ['selectedOption', 'selectedService'])
   }
 }
 </script>
@@ -50,13 +50,6 @@ export default {
   min-height: 100vh;
   height: 100%;
   background-image: linear-gradient(#F7C040, #66B2FF);
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
 }
 
 .menu-icon {

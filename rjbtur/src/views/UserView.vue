@@ -1,8 +1,8 @@
 <template>
   <div class="content">
-    <header-component/>
+    <header-component breadcrumb="/Dados do usuario"/>
 
-    <p class="h2 text-center pb-4">Cadastro</p>
+    <p class="h2 text-center pb-4">Dados do usuario</p>
 
     <form class="px-3 user-form" @submit.prevent autocomplete="off">
       <div class="alert alert-danger"

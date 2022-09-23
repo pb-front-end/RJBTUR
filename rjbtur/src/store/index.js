@@ -27,6 +27,9 @@ const index = {
     },
     setSelectedOption({commit}, selectedOption) {
       commit('setSelectedOption', selectedOption);
+    },
+    logoff({commit}) {
+      commit('setUser', undefined);
     }
   }
 };
