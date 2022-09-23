@@ -70,13 +70,13 @@ export default {
       this.saveUser();
     },
     saveUser() {
-      const user = {
+      let user = {
         username: this.username,
         email: this.email,
         password: this.newPassword
       };
 
-      this.saveUserInStorage(user);
+      user = this.saveUserInStorage(user);
 
       this.setUser(user);
       this.$router.push('/');
@@ -118,12 +118,19 @@ export default {
 
       const userIndex = users.findIndex(({id}) => { return (id === this.user.id) });
 
-      users[userIndex] = user;
+      const userData = {
+        ...this.user,
+        ...user
+      };
+
+      users[userIndex] = userData;
 
       localStorage.setItem(
         'users',
         JSON.stringify(users)
       );
+
+      return userData;
     },
     getCurrentUsers() {
       return JSON.parse(localStorage.getItem('users'));
