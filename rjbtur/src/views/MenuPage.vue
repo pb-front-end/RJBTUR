@@ -14,20 +14,27 @@
 		</div>
 
 		<div class="third">
-			<p>Pontos Turísticos</p>
-			<p>Hospedagem</p>
-			<p>Restaurantes</p>
-			<p>Hospitais</p>
+			<p @click="select('Pontos Turísticos')">Pontos Turísticos</p>
+			<p @click="select('Hospedagens')">Hospedagem</p>
+			<p @click="select('Restaurantes')">Restaurantes</p>
+			<p @click="select('Hospitais')">Hospitais</p>
 		</div>
 
 	</div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   methods: {
     goToLastPage() {
       history.back();
+    },
+    ...mapActions('index', ['setSelectedService']),
+    select(service) {
+        this.setSelectedService(service);
+        this.$router.push("/OptionsPage");
     }
   }
 }
@@ -69,7 +76,7 @@ a {
 
 p {
   font-size: 1.5em;
-  text-decoration: none;
+  cursor: pointer;
 }
 
 .second {
@@ -77,7 +84,6 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 }
 
 .second {
