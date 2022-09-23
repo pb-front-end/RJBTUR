@@ -8,7 +8,9 @@
     <div class="service-categories py-5">
       <div v-for="(serviceCategory, index) in serviceCategories" :key="index" class="service-category">
         <div v-html="serviceCategory.title" class="service-title"></div>
-        <img :src="serviceCategory.img" :alt="serviceCategory.imgAlt">
+        <router-link :to="serviceCategory.path">
+          <img :src="serviceCategory.img" :alt="serviceCategory.imgAlt" @click="setSelectedService(serviceCategory.name)">
+        </router-link>
       </div>
     </div>
   </div>
@@ -16,19 +18,22 @@
 
 <script>
 import HeaderComponent from '../components/HeaderComponent.vue'
+import { mapActions } from 'vuex'
 
 export default {
   components: { HeaderComponent },
   data() {
     return {
       serviceCategories: [
-        { title: '<p style="color: white;">Pontos turísticos</p>', img: require('../assets/images/copacabana.jpg'), imgAlt: 'vista de copacabana' },
-        { title: '<p style="color: white;">Hospedagens</p>', img: require('../assets/images/copacabana.jpg'), imgAlt: 'vista de copacabana' },
-        { title: '<p style="color: white;">Restaurantes</p>', img: require('../assets/images/copacabana.jpg'), imgAlt: 'vista de copacabana' },
-        { title: '<p style="color: white;">Hospitais</p>', img: require('../assets/images/copacabana.jpg'), imgAlt: 'vista de copacabana' },
-        { title: '<p style="color: white;">Eventos</p>', img: require('../assets/images/copacabana.jpg'), imgAlt: 'vista de copacabana' },
-      ]
-    };
+        {name: "Pontos Turísticos", title: '<p style="color: white;">Pontos Turísticos</p>', img: require('../assets/images/copacabana.jpg'), path: "/OptionsPage", imgAlt: 'vista de copacabana' },
+        {name: "Hospedagens", title: '<p style="color: white;">Hospedagens</p>', img: require('../assets/images/hospedagem.jpeg'), path: "/OptionsPage", imgAlt: 'quarto de hotel' },
+        {name: "Restaurantes", title: '<p style="color: white;">Restaurantes</p>', img: require('../assets/images/restaurante.jpeg'), path: "/OptionsPage", imgAlt: 'comida' },
+        {name: "Hospitais", title: '<p style="color: white;">Hospitais</p>', img: require('../assets/images/hospital.jpeg'), path: "/OptionsPage", imgAlt: 'equipe medica' },
+        ]
+    }
+  },
+  methods: {
+    ...mapActions('index', ['setSelectedService'])
   }
 }
 </script>
@@ -51,6 +56,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .service-title {

@@ -2,7 +2,7 @@
   <div class="content">
     <header-component/>
     <main>
-      <h2 class="h1 text-center">Cristo Redentor</h2>
+      <h2 class="h1 text-center">{{ this.selectedOption }}</h2>
       <img src="../assets/images/cristo.jpeg" class="banner">
 
       <div class="info card">
@@ -34,9 +34,13 @@
 
 <script>
 import HeaderComponent from '@/components/HeaderComponent.vue';
+import { mapState } from 'vuex';
 
 export default {
-  components: {HeaderComponent}
+  components: {HeaderComponent},
+  computed: {
+    ...mapState('index', ['selectedOption'])
+  }
 }
 </script>
 

@@ -9,8 +9,7 @@
 
 		<div class="second">
 			<hr class="line">
-			<p>Português <img src="../assets/icons/br.svg"></p>
-			<p>Inglês <img src="../assets/icons/gb.svg"></p>
+			<router-link to="/"><p>Home</p></router-link>
 			<hr class="line">
 		</div>
 
@@ -19,12 +18,8 @@
 			<p>Hospedagem</p>
 			<p>Restaurantes</p>
 			<p>Hospitais</p>
-			<hr class="line">
 		</div>
 
-		<div class="fourth" @click="goToAddEvent">
-			<p>Adicionar Evento</p>
-		</div>
 	</div>
 </template>
 
@@ -33,15 +28,12 @@ export default {
   methods: {
     goToLastPage() {
       history.back();
-    },
-    goToAddEvent() {
-      this.$router.push('/AddEventForm');
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
 #container {
   background-color: #EEF0F2;
   display: flex;
@@ -70,11 +62,16 @@ export default {
   font-size: 2em;
 }
 
-p img{
-  width: 20px;
+a {
+  text-decoration: none;
 }
 
-.second, .third, .fourth {
+p {
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+.second {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,8 +85,14 @@ p img{
 }
 
 .third {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 250px;
-  row-gap: 10px;
+}
+
+.third p {
+  margin-top: 40px;
 }
 
 hr.line {
