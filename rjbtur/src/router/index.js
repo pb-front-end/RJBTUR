@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import IndexPage from '../views/IndexPage.vue';
 import MenuPage from '../views/MenuPage.vue';
-import AddEventForm from '../views/AddEventForm.vue';
 import OptionsPage from '../views/OptionsPage.vue';
 import DescriptionPage from '../views/DescriptionPage.vue';
 import UserView from '../views/UserView.vue';
@@ -18,11 +17,6 @@ const routes = [
     path: '/MenuPage',
     name: 'MenuPage',
     component: MenuPage
-  },
-  {
-    path: '/AddEventForm',
-    name: 'AddEventForm',
-    component: AddEventForm
   },
   {
     path: '/OptionsPage',
