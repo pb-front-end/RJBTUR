@@ -4,6 +4,9 @@ import MenuPage from '../views/MenuPage.vue';
 import AddEventForm from '../views/AddEventForm.vue';
 import OptionsPage from '../views/OptionsPage.vue';
 import DescriptionPage from '../views/DescriptionPage.vue';
+import UserView from '../views/UserView.vue';
+import LoginView from '../views/LoginView.vue';
+import CreateUser from '../views/CreateUser.vue';
 
 const routes = [
   {
@@ -30,6 +33,21 @@ const routes = [
     path: '/description',
     name: 'description',
     component: DescriptionPage
+  },
+  {
+    path: '/User',
+    name: 'User',
+    component: UserView
+  },
+  {
+    path: '/UserNew',
+    name: 'UserNew',
+    component: CreateUser
+  },
+  {
+    path: '/UserLogin',
+    name: 'UserLogin',
+    component: LoginView
   }
 ]
 

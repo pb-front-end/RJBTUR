@@ -3,18 +3,38 @@
     <h1 class="d-none">RJBTUR</h1>
     <img src="../assets/icons/menu-icon.svg" @click="goToOptions" class="menu-icon" alt="icone de menu">
     <img src="../assets/images/logo-rjbtur-removebg-preview.png" class="pointer" @click="goToHome" alt="Logo rjbtur" title="logo rjbtur">
-    <img src="../assets/icons/search-icon.svg" class="search-icon" alt="icone de procura">
+    <img v-if="logged" src="../assets/icons/user-solid.svg" @click="goToUser" class="user-icon pointer" alt="icone de usuario">
+    <img v-else src="../assets/icons/not-user.svg" @click="goToUser" class="user-icon pointer" alt="icone de usuario riscado">
   </header>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
+  computed: {
+    ...mapState('index', ['user']),
+
+    logged() {
+      return this.user != undefined;
+    }
+  },
+
   methods: {
     goToOptions() {
-      this.$router.push('/MenuPage');
+      this.goTo('/MenuPage');
     },
     goToHome() {
-      this.$router.push('/');
+      this.goTo('/');
+    },
+    goToUser() {
+      if (!this.logged)
+        return this.goTo('/UserLogin');
+
+      this.goTo('/User');
+    },
+    goTo(path) {
+      this.$router.push(path);
     }
   }
 }
@@ -37,17 +57,11 @@ header {
   cursor: pointer;
 }
 
-.search-icon {
+.user-icon {
   max-height: 40px;
 }
 
 .pointer {
   cursor: pointer;
-}
-
-@media (min-width: 960px) {
-  .search-icon {
-    visibility: hidden;
-  }
 }
 </style>
