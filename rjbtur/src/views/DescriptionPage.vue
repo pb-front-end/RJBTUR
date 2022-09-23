@@ -3,7 +3,7 @@
     <header-component/>
     <main>
       <h2 class="h1 text-center">{{ this.selectedOption }}</h2>
-      <img src="../assets/images/cristo.jpeg" class="banner">
+      <img :src="getImage()" class="banner">
 
       <div class="info card">
         <div class="card-body">
@@ -38,8 +38,24 @@ import { mapState } from 'vuex';
 
 export default {
   components: {HeaderComponent},
+  data() {
+    return {
+      images: [
+        {servico: "Pontos Turísticos", img: require('../assets/images/cristo.jpeg')},
+        {servico: "Hospedagens", img: require('../assets/images/hospedagem.jpeg')},
+        {servico: "Restaurantes",  img: require('../assets/images/restaurante.jpeg')},
+        {servico: "Hospitais", img: require('../assets/images/hospital.jpeg')}
+      ]
+    }
+  },
   computed: {
-    ...mapState('index', ['selectedOption'])
+    ...mapState('index', ['selectedOption']),
+    ...mapState('index', ['selectedService'])
+  },
+  methods: {
+    getImage() {
+      return this.images.find(i => i.servico == this.selectedService).img
+    }
   }
 }
 </script>

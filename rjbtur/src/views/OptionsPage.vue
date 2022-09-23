@@ -29,7 +29,7 @@ export default {
     return {
       opcoes: [
         {name: "Cristo Redentor", servico: "Pontos Turísticos", title: '<p style="color: white;">Cristo Redentor</p>', img: require('../assets/images/copacabana.jpg'), imgAlt: 'vista do cristo redentor' },
-        {name: "Pão de Açúcar<", servico: "Pontos Turísticos", title: '<p style="color: white;">Pão de Açúcar</p>', img: require('../assets/images/copacabana.jpg'), imgAlt: 'vista do cristo redentor' },
+        {name: "Pão de Açúcar", servico: "Pontos Turísticos", title: '<p style="color: white;">Pão de Açúcar</p>', img: require('../assets/images/copacabana.jpg'), imgAlt: 'vista do cristo redentor' },
         {name: "Arcos da Lapa", servico: "Pontos Turísticos", title: '<p style="color: white;">Arcos da Lapa</p>', img: require('../assets/images/copacabana.jpg'), imgAlt: 'vista do cristo redentor' },
         {name: "Bondinho", servico: "Pontos Turísticos", title: '<p style="color: white;">Bondinho</p>', img: require('../assets/images/copacabana.jpg'), imgAlt: 'vista do cristo redentor' },
 
